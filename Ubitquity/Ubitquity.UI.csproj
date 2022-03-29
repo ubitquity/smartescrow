@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Admin\**" />
+    <Content Remove="Controllers\Admin\**" />
+    <EmbeddedResource Remove="Controllers\Admin\**" />
+    <None Remove="Controllers\Admin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\fonts\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\icons\font\ubitquity-sidebar.svg" />
+    <None Include="wwwroot\assets\icons\font\ubitquity-sidebar.woff2" />
+    <None Include="wwwroot\assets\icons\font\ubitquity.svg" />
+    <None Include="wwwroot\assets\icons\font\ubitquity.woff2" />
+    <None Include="wwwroot\assets\images\calendaricon.svg" />
+    <None Include="wwwroot\assets\images\close-up-file.svg" />
+    <None Include="wwwroot\assets\images\pdficon.svg" />
+    <None Include="wwwroot\assets\images\tickmark.svg" />
+    <None Include="wwwroot\assets\images\up-file.svg" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\customjs.js" />
+    <None Include="wwwroot\js\jquery-3.5.1.slim.min.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Agent\Data\" />
+    <Folder Include="Areas\Agent\Models\" />
+    <Folder Include="Areas\Counterparties\Data\" />
+    <Folder Include="Areas\Counterparties\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\PartialViews\Navbar.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

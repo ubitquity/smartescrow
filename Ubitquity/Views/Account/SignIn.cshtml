@@ -1,0 +1,406 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>Ubitquity | Sign In</title>
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <style>
+
+        .error {
+            text-align: right;
+            color: #f80d1b;
+            font-size: 14px;
+        }
+
+        .form-control.error {
+            text-align: left;
+         /*   background: #fff2f2;
+            border: 1px solid;*/
+        }
+        .form-check-box .form-check {
+            width: 20px;
+            margin-right: 9px;
+            margin-bottom: 0;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="d-flex wrapper signupflow">
+        <div class="container">
+            <div class="row signup-section">
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div class="right-sec">
+                        <img src="~/assets/images/logo-colored.png">
+                        <h1 class="f-bold mt-3">Welcome to Ubitquity</h1>
+                        <p class="lbl-txt">UBITQUITY LAUNCHES SMARTESCROW.US </p>
+                        <img src="~/assets/images/invrtdcomas.PNG" class="mb-1">
+                        <p class="lead-txt fst-italic">
+                            SmartEscrow is a game-changer for
+                            buyers who want to purchase real estate
+                            with their cryptocurrency.<img src="~/assets/images/invrtdcomas_close.PNG" class="mb-1 px-2">
+                        </p>
+                        
+                        <p>
+                            - Nathan Wosnack, Founder & CEO, UBITQUITY, LLC
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="left-sec">
+                        <div class="card">
+                            <h4 class="f-bold">Sign in as <span class="blue-txt">As Agent / Title Company</span></h4>
+                            <ul class="nav nav-tabs user-tabs nav-justified" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active agent-nav" id="agent-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Agent</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link counterparties-nav" id="counterparties-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Counterparties</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link admin-tab" id="admin-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Admin</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="agent-tab">
+                                    <form class="user-form" id="frm-agent">
+                                        <div class="form-group mt-0">
+                                            <label for="inputemail">Your Email</label>
+                                            <input type="email" class="form-control" id="inputemail_agent" name="inputemail_agent" placeholder="Enter your Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputpass">Your Password</label>
+                                            <input type="password" class="form-control" id="inputpass_agent" name="inputpass_agent" placeholder="Enter your password">
+                                        </div>
+                                        <div class="form-group ff-user-rgstr s-txt">
+                                            <div class="form-check-box d-flex">
+                                                <input class="form-check" type="checkbox" value="" id="CheckDefault1">
+                                                <label class="form-check-label " for="CheckDefault1">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                            <div class="f-pass">
+                                                <a onclick="window.location.href = 'Account/ForgotPassword'" class="f-bold s-txt">Forgot your Password?</a>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="filled-btn f-bold singup-btn">
+                                            Sign in Now
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="counterparties-tab">
+                                    <form class="user-form" id="frm-counterparties">
+                                        <div class="form-group mt-0">
+                                            <label for="inputemail">Your Email</label>
+                                            <input type="email" class="form-control" id="inputemail_counterparties" name="inputemail_counterparties" placeholder="Enter your Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputpass">Your Password</label>
+                                            <input type="password" class="form-control" id="inputpass_counterparties" name="inputpass_counterparties" placeholder="Enter your password">
+                                        </div>
+                                        <div class="form-group ff-user-rgstr s-txt">
+                                            <div class="form-check-box d-flex">
+                                                <input class="form-check" type="checkbox" value="" id="CheckDefault2">
+                                                <label class="form-check-label " for="CheckDefault2">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                            <div class="f-pass">
+                                                <a href="#" class="f-bold s-txt">Forgot your Password?</a>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="filled-btn f-bold singup-btn">
+                                            Sign in Now
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="admin-tab">
+                                    <form class="user-form" id="frm-admin">
+                                        <div class="form-group mt-0">
+                                            <label for="inputemail">Your Email</label>
+                                            <input type="email" class="form-control" id="inputemail_admin" name="inputemail_admin" placeholder="Enter your Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputpass">Your Password</label>
+                                            <input type="password" class="form-control" id="inputpass_admin" name="inputpass_admin" placeholder="Enter your password">
+                                        </div>
+                                        <div class="form-group ff-user-rgstr s-txt">
+                                            <div class="form-check-box d-flex">
+                                                <input class="form-check" type="checkbox" value="" id="CheckDefault3">
+                                                <label class="form-check-label " for="CheckDefault3">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                            <div class="f-pass">
+                                                <a href="#" class="f-bold s-txt">Forgot your Password?</a>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="filled-btn f-bold singup-btn">
+                                            Sign in Now
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="divider-r-ft">
+                            <p class="p-txt text-center"> Don’t have an account? <a href="#" class="f-bold">Contact Admin</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="agent-deal-modal error-modal">
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade " id="login-model" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title f-bold" id="ModalLabel1"></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="~/assets/images/error-vector.png">
+                        <h4 class="f-bold mb-0 pt-5 pb-5">Not Successful</h4>
+                        <h4 id="modal-lbl">
+                        </h4>
+                    </div>
+                    <div class="modal-footer ok--btn bt-0">
+                        <button type="button" class="filled-btn f-bold singup-btn" id="login-modal-ok">
+                            OK
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/additional-methods.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/customjs.js"></script>
+
+
+    <script>
+        jQuery(document).ready(function () {
+
+            $("#agent-tab").click(function () {
+                $('.blue-txt').html('As Agent / Title Company');
+            });
+            $("#counterparties-tab").click(function () {
+
+                $('.blue-txt').html('Counterparties');
+
+            });
+            $("#admin-tab").click(function () {
+
+                $('.blue-txt').html('Admin');
+
+            });
+            if ($('button').hasClass("activejj")) {
+                console.log("yesdscadii");
+            }
+
+            $("#login-modal-ok").click(function () {
+                $("#login-model").modal("hide");
+            });
+            ValidateForm();
+            localStorage.clear();
+        });
+
+        function ValidateForm() {
+            $('#frm-agent').validate({
+                rules: {
+                    inputemail_agent: {
+                        required: true
+                    },
+                    inputpass_agent: {
+                        required: true
+                    }
+                },
+                messages: {
+                    inputemail_agent: 'Email is required',
+                    inputpass_agent: 'Password is required'
+                },
+                submitHandler: function (form) {
+
+                    let email = $("#inputemail_agent");
+                    let password = $("#inputpass_agent");
+
+                    SignIn('agent', email, password);
+                }
+            });
+
+            $('#frm-counterparties').validate({
+                rules: {
+                    inputemail_counterparties: {
+                        required: true
+                    },
+                    inputpass_counterparties: {
+                        required: true
+                    }
+                },
+                messages: {
+                    inputemail_counterparties: 'Email is required',
+                    inputpass_counterparties: 'Password is required'
+                },
+                submitHandler: function (form) {
+
+                    let email = $("#inputemail_counterparties");
+                    let password = $("#inputpass_counterparties");
+
+                    SignIn('counterparties', email, password);
+                }
+            });
+
+            $('#frm-admin').validate({
+                rules: {
+                    inputemail_admin: {
+                        required: true
+                    },
+                    inputpass_admin: {
+                        required: true
+                    }
+                },
+                messages: {
+                    inputemail_admin: 'Email is required',
+                    inputpass_admin: 'Password is required'
+                },
+                submitHandler: function (form) {
+
+                    let email = $("#inputemail_admin");
+                    let password = $("#inputpass_admin");
+
+                    SignIn('admin', email, password);
+                }
+            });
+        }
+
+
+        function SignIn(flow, email, password) {
+
+            //var flow = $('.active')[0].id;
+            //var email;
+            //var password;
+
+            //flow = flow.replace('-tab', '');
+
+            //switch (flow) {
+            //    case 'admin':
+            //        email = $('#inputemail_admin');
+            //        password = $('#inputpass_admin');
+            //        break;
+            //    case 'agent':
+            //        email = $('#inputemail_agent');
+            //        password = $('#inputpass_agent');
+            //        break;
+            //    case 'counterparties':
+            //        email = $('#inputemail_counterparties');
+            //        password = $('#inputpass_counterparties');
+            //        break;
+            //}
+
+            var email_val = $(email).val();
+            var password_val = $(password).val();
+
+            //if (email_val == '') {
+            //    $(email).focus();
+            //    $('#modal-lbl').text('Email is required!');
+            //    $('#login-model').modal('show');
+            //}
+            //else if (password_val == '') {
+            //    $(password).focus();
+            //    $('#modal-lbl').text('Password is required!');
+            //    $('#login-model').modal('show');
+            //}
+            if (email_val != 'admin@gmail.com' || password_val != 123) {
+                $('#modal-lbl').text('Email Or Password is incorrect!');
+                $('#login-model').modal('show');
+            }
+            else {
+                if (flow == 'admin')
+                    location.href = 'Admin/Dashboard/Index';
+
+                else if (flow == 'agent')
+                    location.href = 'Agent/Agent_Dashboard/Index';
+
+                else if (flow == 'counterparties')
+                    location.href = 'Counterparties/Counterparties/Index';
+
+                localStorage.setItem('Ubitquity_Login_UserID',1)
+            }
+        }
+
+            //function SignIn() {
+
+            //    var flow = $('.active')[0].id;
+            //    var email;
+            //    var password;
+
+            //    flow = flow.replace('-tab', '');
+
+            //    switch (flow) {
+            //        case 'admin':
+            //            email = $('#inputemail_admin');
+            //            password = $('#inputpass_admin');
+            //            break;
+            //        case 'agent':
+            //            email = $('#inputemail_agent');
+            //            password = $('#inputpass_agent');
+            //            break;
+            //        case 'counterparties':
+            //            email = $('#inputemail_counterparties');
+            //            password = $('#inputpass_counterparties');
+            //            break;
+            //    }
+
+            //    var email_val = $(email).val();
+            //    var password_val = $(password).val();
+
+            //    if (email_val == '') {
+            //        $(email).focus();
+            //        $('#modal-lbl').text('Email is required!');
+            //        $('#login-model').modal('show');
+            //    }
+            //    else if (password_val == '') {
+            //        $(password).focus();
+            //        $('#modal-lbl').text('Password is required!');
+            //        $('#login-model').modal('show');
+            //    }
+            //    else if (email_val != 'admin@gmail.com' || password_val != 123) {
+            //        $('#modal-lbl').text('Email Or Password is incorrect!');
+            //        $('#login-model').modal('show');
+            //    }
+            //    else {
+            //        if (flow == 'admin')
+            //            location.href = 'Admin/Dashboard/Index';
+
+            //        else if (flow == 'agent')
+            //            location.href = 'Agent/Agent_Dashboard/Index';
+
+            //        else if (flow == 'counterparties')
+            //            location.href = 'Counterparties/Counterparties/Index';
+            //    }
+            //}
+
+    </script>
+
+</body>
+</html>

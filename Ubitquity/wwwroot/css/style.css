@@ -1,0 +1,2376 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    /*text-transform: capitalize;*/
+}
+
+a {
+    text-decoration: none
+}
+
+.s-txt {
+    font-size: 0.875rem
+}
+
+.f-bold {
+    font-weight: 700
+}
+
+.lbl-txt {
+    color: #777777
+}
+
+.lead-txt {
+    font-size: 1.5rem
+}
+
+.s-txt {
+    font-size: 0.875rem
+}
+
+.b-txt {
+    color: #2D76F1
+}
+
+.g-txt {
+    color: #777777
+}
+
+.reg-txt {
+    font-size: 1rem
+}
+
+.filled-btn {
+    background: #2D76F1;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.bgwhite-btn {
+    border: 2px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    background: transparent;
+    color: #2D76F1;
+    padding: 8px 0;
+    margin-bottom: 24px;
+}
+
+.signupflow .card {
+    margin: 0 22px;
+    padding: 4.188rem 3.438rem;
+    box-shadow: 0px 4px 25px 20px rgb(0 0 0 / 6%);
+    border-radius: 15px;
+    border: none;
+    min-height: 735px
+}
+
+.signupflow .divider {
+    margin: 35px 0 24px 0;
+    color: #a79e9e
+}
+
+.signupflow .right-sec {
+    max-width: 435px
+}
+
+.startup-section {
+    padding-top: 8%
+}
+
+.blue-txt {
+    color: #2D76F1
+}
+
+.user-form label {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10px
+}
+
+.user-form input {
+    background: #F8F8F8;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 11px;
+}
+
+    .user-form input:focus {
+        box-shadow: none;
+        border: 1px solid #E9E9E9;
+        background: #F8F8F8 !important;
+    }
+
+.user-form .form-group {
+    margin-top: 24px;
+    position: relative
+}
+
+.m-bottom {
+    margin-bottom: 30px
+}
+
+input::placeholder {
+    color: #C4C4C4 !important;
+}
+
+.user-form .singup-btn {
+    width: 100%;
+    margin-top: 48px
+}
+
+.divider-r {
+    margin: 75px 0 75px 0;
+    color: #a79e9e;
+}
+
+.p-txt {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.signup-section {
+    padding: 35px 0
+}
+
+.g-text {
+    color: #545454
+}
+
+.vf-txt-code {
+    padding: 45px 0;
+}
+
+.enter-vfcode {
+    display: flex;
+    gap: 10px;
+}
+
+    .enter-vfcode input {
+        width: 36px
+    }
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+    }
+
+        .lds-spinner div:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 37px;
+            width: 6px;
+            height: 18px;
+            border-radius: 20%;
+            background: #dfc;
+        }
+
+        .lds-spinner div:nth-child(1) {
+            transform: rotate(0deg);
+            animation-delay: -1.1s;
+        }
+
+        .lds-spinner div:nth-child(2) {
+            transform: rotate(30deg);
+            animation-delay: -1s;
+        }
+
+        .lds-spinner div:nth-child(3) {
+            transform: rotate(60deg);
+            animation-delay: -0.9s;
+        }
+
+        .lds-spinner div:nth-child(4) {
+            transform: rotate(90deg);
+            animation-delay: -0.8s;
+        }
+
+        .lds-spinner div:nth-child(5) {
+            transform: rotate(120deg);
+            animation-delay: -0.7s;
+        }
+
+        .lds-spinner div:nth-child(6) {
+            transform: rotate(150deg);
+            animation-delay: -0.6s;
+        }
+
+        .lds-spinner div:nth-child(7) {
+            transform: rotate(180deg);
+            animation-delay: -0.5s;
+        }
+
+        .lds-spinner div:nth-child(8) {
+            transform: rotate(210deg);
+            animation-delay: -0.4s;
+        }
+
+        .lds-spinner div:nth-child(9) {
+            transform: rotate(240deg);
+            animation-delay: -0.3s;
+        }
+
+        .lds-spinner div:nth-child(10) {
+            transform: rotate(270deg);
+            animation-delay: -0.2s;
+        }
+
+        .lds-spinner div:nth-child(11) {
+            transform: rotate(300deg);
+            animation-delay: -0.1s;
+        }
+
+        .lds-spinner div:nth-child(12) {
+            transform: rotate(330deg);
+            animation-delay: 0s;
+        }
+
+        .lds-spinner div:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 37px;
+            width: 6px;
+            height: 18px;
+            border-radius: 20%;
+            background: #2d50a7;
+        }
+
+.spinner {
+    position: relative
+}
+
+.lds-spinner {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.accreatd-txt {
+    margin: 40px 0px;
+}
+
+.signup-modal .card {
+    margin: 0 22px;
+    padding: 67px 55px;
+    border-radius: 15px;
+    border: none;
+    min-height: 880px
+}
+
+.signup-comp h4 {
+    margin-top: 40px
+}
+
+.signup-modal .modal .card {
+    position: relative;
+    min-height: 600px
+}
+
+.signup-comp {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.form-check-input {
+    background: transparent;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 0 !important;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.15em;
+    margin-right: 8px;
+}
+
+.ff-user-rgstr {
+    display: flex;
+    justify-content: space-between
+}
+
+.divider-r-ft {
+    margin: 40px 0 20px 0;
+    color: #a79e9e;
+}
+
+.user-tabs button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.user-tabs {
+    margin: 45px 0
+}
+
+.signupflow .nav-tabs .nav-link {
+    color: #000000;
+    padding: 0.8rem 1rem;
+}
+
+    .signupflow .nav-tabs .nav-link.active {
+        color: #fff;
+        background-color: #2D76F1;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+.signupflow .nav-tabs {
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+    .signupflow .nav-tabs .nav-link {
+        border: none;
+    }
+
+#counterparties-tab {
+    border-left: 1px solid #2D76F1;
+    border-right: 1px solid #2D76F1;
+    border-radius: 0;
+}
+
+.agent-nav {
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 0 !important;
+}
+
+.admin-tab {
+    -webkit-border-top-right-radius: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    -moz-border-radius-topright: 7px;
+    -moz-border-radius-bottomright: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top-left-radius: 0 !important;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-revenue--stats-title {
+    display: flex;
+    align-items: flex-end;
+}
+
+.stats--status {
+    margin: 0 0px 15px 30px;
+}
+
+.total-revenue-stats .nav-tabs {
+    border-bottom: 1px solid #DEEAFF;
+}
+
+.total-revenue-stats {
+    margin-top: 30px
+}
+
+.stats-duration-tabs .nav-tabs .nav-item {
+    position: relative
+}
+
+    .stats-duration-tabs .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        border: none !important;
+        background-color: transparent;
+        ;
+    }
+
+.nav-link.active:after {
+    content: "";
+    width: 100%;
+}
+
+.total-revenue-stats .nav-tabs .nav-link {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: -2px;
+}
+
+@media (min-width: 576px) {
+    .signup-modal .modal-dialog {
+        max-width: 594px;
+        margin: 1.75rem auto;
+    }
+
+    .select-coin-modal .modal-dialog {
+        max-width: 594px;
+        margin: 1.75rem auto;
+    }
+
+    .add-book-modal .modal-dialog {
+        max-width: 750px;
+        margin: 1.75rem auto;
+    }
+}
+
+.reset-password p {
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.dob-field {
+    position: relative
+}
+
+.cal-icon::before {
+    content: url("../assets/images/calendaricon.svg");
+    position: absolute;
+    right: 14px;
+    top: 46px;
+}
+
+.gj-icon {
+    display: none
+}
+
+#datepicker {
+    padding: 14px;
+}
+
+/*
+#wrapper {
+	overflow-x: hidden;
+}
+*/
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -19.75rem;
+    transition: margin 0.25s ease-out;
+    position: fixed
+}
+
+    #sidebar-wrapper .sidebar-heading {
+        padding: 10px 53px;
+        font-size: 1.2rem;
+        background: #2D76F1;
+    }
+
+    #sidebar-wrapper .list-group {
+        width: 19.75rem;
+    }
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.list-group-flush ul {
+    list-style-type: none;
+    padding: 18px;
+    padding-top: 50px
+}
+
+.list-group-flush .list-group-item {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    border: none !important;
+    padding: 12px 30px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.header-menu .dropdown-menu {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 11px 5px rgb(0 0 0 / 6%);
+    border-radius: 7px;
+    border: none;
+    top: 46px;
+}
+
+.list-group-item i {
+    color: #2D76F1;
+}
+
+.list-group-item-action:active {
+    color: #fff;
+    background-color: #2D76F1 !important;
+}
+
+.menu-icon {
+    margin-right: 15px;
+}
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+    z-index: 1;
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #2D76F1 !important;
+}
+
+.list-group-item:hover i {
+    color: #fff;
+}
+
+.list-group-item:active i {
+    color: #fff;
+}
+
+.list-group-item:focus i {
+    color: #fff;
+}
+
+.main-header {
+    padding: 14px 26px !important;
+    background: #2D76F1;
+}
+
+.header-menu .nav-link {
+    color: #fff
+}
+
+.sidebar-heading,
+.main-header {
+    max-height: 60px
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-img {
+    margin-right: 10px
+}
+
+.header-menu .dropdown-toggle {
+    border-left: 1px solid #2863C6;
+}
+
+.notify-alert {
+    position: relative
+}
+
+.ubi-iconnotify:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #FB0000;
+    left: 20px;
+    position: absolute;
+    top: 6px;
+    border-radius: 50%;
+}
+
+.title-icon {
+    color: #2D76F1;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.deal-numbers {
+    font-size: 2.5rem
+}
+
+#page-content-wrapper {
+    background: #F4F4F4;
+}
+
+.page-title {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px
+}
+
+.deals-card h5 {
+    font-size: 1.125rem
+}
+
+.deals-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-content {
+    margin: 15px;
+    background: #fff;
+    padding: 45px 35px;
+}
+
+.deals-card-txt {
+    display: grid;
+    align-self: normal;
+}
+
+.ubi-iconstats-up {
+    background: #43E064;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 0;
+}
+
+.stats--status-per {
+    font-size: 14px;
+    color: #43E064;
+}
+
+.stats--status-duration {
+    font-size: 11px;
+    color: #777777;
+}
+
+.users-overview-stats .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+    .users-overview-stats .list-group-item p {
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        align-items: center;
+    }
+
+    .users-overview-stats .list-group-item img {
+        margin-right: 10px
+    }
+
+.overview-users-graph {
+    margin: 40px 0;
+}
+
+.dashboard-widget {
+    padding: 36px;
+    background: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
+}
+
+.t-r-stats-graph {
+    padding-top: 30px
+}
+
+.total-revenue-numbers {
+    margin-top: 15px;
+    display: block;
+}
+
+.deals-sub-icon {
+    font-size: 42px;
+    background: #2D76F1;
+    color: #fff;
+    border-radius: 7px;
+    padding: 8px 12px;
+    margin-right: 25px;
+    height: 100%
+}
+
+.deals-sub-number {
+    font-size: 1.5rem
+}
+
+.overviewdeals-stats-card p {
+    font-family: 'Open Sans', sans-serif;
+    ;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+.deals-appr-icon {
+    font-size: 42px;
+    background: #43E064;
+    color: #fff;
+    border-radius: 7px;
+    padding: 8px 12px;
+    margin-right: 25px;
+    height: 100%
+}
+
+.overview-deals-graph {
+    margin-top: 60px
+}
+
+.overview-deals-section {
+    margin-top: 30px
+}
+
+.overview-deals-inner {
+    margin-top: 20px
+}
+
+.stat-bars .bars-txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+    .stat-bars .bars-txt label {
+        font-size: 1.125rem;
+    }
+
+    .stat-bars .bars-txt span {
+        color: #777777
+    }
+
+.stat-bars .progress {
+    height: 0.5rem;
+}
+
+.d-submited-bar .progress-bar {
+    background-color: #2D76F1
+}
+
+.d-completed-bar .progress-bar {
+    background-color: #43E064
+}
+
+.d-progress-bar .progress-bar {
+    background-color: #FD8734
+}
+
+.d-rejectd-bar .progress-bar {
+    background-color: #FB0000
+}
+
+.d-rcvd-bar .progress-bar {
+    background-color: #FFD764
+}
+
+.d-transferred-bar .progress-bar {
+    background-color: #FFD764
+}
+
+.d-fee-bar .progress-bar {
+    background-color: #2D76F1
+}
+
+.current-week-stats {
+    margin-top: 30px
+}
+
+.bar--sec {
+    margin-top: 35px
+}
+
+.nav-tabs .nav-link:focus {
+    border: none !important;
+    isolation: isolate;
+}
+
+
+.nav-search {
+    position: relative;
+    width: 433px
+}
+
+    .nav-search input {
+        text-indent: 25px;
+        padding: 11px 20px;
+        border-radius: 7px
+    }
+
+
+
+    .nav-search .ubi-iconsearch {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        color: #2D76F1;
+    }
+
+
+.table > :not(caption) > * > * {
+    box-shadow: none !important;
+}
+
+.deals-table-sec tr:nth-child(even) {
+    background: #F7FAFF;
+}
+
+.deals-table-sec td {
+    border: none;
+    padding: 1.2rem .5rem !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #777777 !important
+}
+
+.deals-table-sec th {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 1.2rem .5rem !important;
+    border: none
+}
+
+.deals-table-sec thead tr {
+    background: #DEEAFF;
+}
+
+#example_filter {
+    display: none
+}
+
+.deals-table-sec tfoot {
+    display: none
+}
+
+.header-menu .dropdown-toggle {
+    font-size: 12px
+}
+
+.pagination {
+    justify-content: flex-end;
+    padding-right: 35px
+}
+
+.status-completed span {
+    font-size: 12px;
+    background: #EFFBF1;
+    border: 1px solid #5DD777;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.status-rejected span {
+    font-size: 12px;
+    background: #FFF3F3;
+    border: 1px solid #F2C5DC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.status-inprogress span {
+    font-size: 12px;
+    background: #f6f3eb;
+    border: 1px solid #F2B63B;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.status-rcvd span {
+    font-size: 12px;
+    background: #EFFBF1;
+    border: 1px solid #5DD777;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.status-pending span {
+    font-size: 12px;
+    background: #FFF3F3;
+    border: 1px solid #F2C5DC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.deals--page {
+    padding: 45px 0
+}
+
+    .deals--page .page-header {
+        padding: 0 23px
+    }
+
+        .deals--page .page-header button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            border: none;
+            color: #fff;
+            background: #2D76F1;
+            border-radius: 7px;
+            padding: 15px 23px !important
+        }
+
+.nav-search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: blue;
+    height: 48px;
+    padding: 15px 23px !important;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.nav-search, .filter-btn {
+    margin-right: 15px
+}
+
+    .filter-btn i {
+        margin-right: 5px
+    }
+
+#example_info {
+    display: none;
+}
+
+#example_wrapper {
+    position: relative
+}
+
+.form-select-sm {
+    margin-left: 8px;
+}
+
+#table_id_filter {
+    display: none
+}
+
+.dataTables_paginate {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 35px;
+    align-items: center
+}
+
+.dataTables_info {
+    display: none
+}
+
+.dataTables_scrollBody
+/*
+.dataTables_length label{
+          display: flex;
+    align-items: center;
+}
+*/
+.dataTables_paginate a {
+    background: #FFFFFF !important;
+    border: 1px solid #E9E9E9 !important;
+    box-sizing: border-box;
+    border-radius: 7px !important;
+    padding: 7px 13px !important;
+}
+
+#example_wrapper {
+    margin-top: 53px
+}
+
+.user--opt .dropdown-toggle::after {
+    display: none;
+}
+
+.btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.user--opt ul {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 11px 5px rgb(0 0 0 / 6%);
+    border-radius: 7px;
+    border: none;
+    right: 21px !important;
+    top: -13px !important;
+}
+
+.mobile--logo {
+    display: none
+}
+
+.total-revenue-stats .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #000000;
+    background-color: transparent;
+    border-bottom: 4px solid #2D76F1;
+    border-radius: 0;
+}
+
+.stats-duration-tabs .nav-link {
+    padding: 0 0 10px 0;
+    color: #777777
+}
+
+.total-revenue-stats .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #DEEAFF;
+    list-style: none;
+}
+
+.stats-duration-tabs ul .nav-item:nth-child(2) {
+    padding: 0 15px 0 15px
+}
+
+.total-revenue-stats .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.header-menu .nav-link {
+    padding: 0 1rem;
+}
+
+.single-deals--page .page-header button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    background: #2D76F1;
+    border-radius: 7px;
+    padding: 15px 23px !important;
+}
+
+.uploaded-file {
+    background: #F7F9FC;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    display: flex;
+    align-items: center
+}
+
+    .uploaded-file img {
+        padding: 20px 21px;
+        border-right: 1px solid #2D76F1;
+    }
+
+    .uploaded-file span {
+        padding-left: 15px;
+        vertical-align: middle;
+    }
+
+
+
+
+.timeline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fff;
+    border-radius: 18px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 30px
+}
+
+.paginate_button {
+    background: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 7px 13px;
+    color: #000;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+    .paginate_button.current {
+        background: #2873EA;
+        color: #fff;
+    }
+
+.dataTables_length {
+    position: absolute;
+    bottom: 5px;
+    left: 35px;
+}
+
+
+.transfer-funds-timeline {
+    display: flex;
+    justify-content: space-between
+}
+
+
+.timeline__header span {
+    margin-bottom: 10px;
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.timeline__header h1 {
+    margin-bottom: 100px;
+    font-size: 20px;
+    color: #262245;
+    text-align: center;
+}
+
+.timeline__header .process {
+    height: 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    z-index: 4;
+}
+
+    .timeline__header .process .xd {
+        width: 50%;
+        border-radius: 3px;
+        height: 8px;
+        background-color: #C0D6FB;
+    }
+
+.line {
+    position: relative;
+}
+
+    .line::before {
+        position: absolute;
+        width: 2px;
+        height: 90%;
+        left: 0;
+        background-color: #C0D6FB;
+        content: "";
+        top: 12px
+    }
+
+    .line .content {
+        position: relative;
+        padding-left: 30px;
+        min-height: 93px;
+    }
+
+        .line .content + .content {
+            margin-top: 40px;
+        }
+
+        .line .content h1 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+
+
+        .line .content::before {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #C0D6FB;
+            content: "";
+            left: -4px;
+            border-radius: 50%;
+            top: 6px
+        }
+
+.p-timeline {
+    color: #545454;
+    max-width: 390px;
+}
+
+.tick-timeline {
+    margin-left: 15px;
+    margin-top: -3px;
+}
+/*# sourceMappingURL=main.css.map */
+.transfer-funds-timeline button {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    background: #2D76F1;
+    border-radius: 7px;
+    padding: 15px 23px !important;
+}
+
+.prprty-inspection-timeline {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .prprty-inspection-timeline .approve-btn-timeline {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        border: none;
+        color: #fff;
+        background: #2D76F1;
+        border-radius: 7px;
+        padding: 10px 27px !important
+    }
+
+    .prprty-inspection-timeline .reject-btn-timeline {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        border: 1px solid #2D76F1;
+        color: #2D76F1;
+        background: #fff;
+        border-radius: 7px;
+        padding: 10px 27px !important
+    }
+
+.singledeal-page-content .single-deal-left {
+    padding-right: 83px;
+}
+
+.agent-info-txt {
+    padding: 0
+}
+
+    .agent-info-txt p {
+        word-wrap: break-word;
+    }
+
+.singledeal-page-content .agent--details {
+    margin-top: 40px
+}
+
+.disabled-txt {
+    color: #C0D6FB
+}
+
+.deals--page .title-right {
+    display: flex;
+    justify-content: flex-end
+}
+
+.table-responsive {
+    overflow-y: hidden
+}
+
+.overview-users-card {
+    height: 100% !important
+}
+
+.overview-deals-section {
+    height: 100% !important
+}
+
+.current-week-stats {
+    height: 100% !important
+}
+
+.deals-table-sec tbody tr td:nth-child(1) {
+    padding-left: 35px !important
+}
+
+.deals-table-sec thead tr th:nth-child(1) {
+    padding-left: 35px !important
+}
+
+.deals-table-sec tbody tr td:last-child {
+    padding-right: 35px !important
+}
+
+.deals-table-sec thead tr th:last-child {
+    padding-right: 35px !important
+}
+
+.btn-close {
+    opacity: 1;
+}
+
+.form-select:focus {
+    border-color: #E9E9E9;
+    box-shadow: none;
+}
+
+.user-form select {
+    background: #F8F8F8;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 11px;
+}
+
+.ubi-icondown {
+    position: absolute;
+    right: 17px;
+    top: 56px;
+    font-size: 6px;
+}
+
+.transfer-fund-modal .form-group .ubi-icondown {
+    position: absolute;
+    right: 17px;
+    top: 56px;
+    font-size: 6px;
+}
+
+.agent-deal-modal .form-group .ubi-icondown {
+    position: absolute;
+    right: 17px;
+    top: 56px;
+    font-size: 6px;
+}
+
+.create-user-btns button:nth-child(1) {
+    background: #fff;
+    color: #2D76F1;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 9px 81px;
+}
+
+.create-user-btns button:nth-child(2) {
+    background: #2D76F1;
+    color: #fff;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 9px 81px;
+}
+
+.dataTables_length label {
+    color: #777777;
+}
+
+.dataTables_length select {
+    padding: 6px 0;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.modal-footer {
+    border-top: 0;
+    padding: 2rem 3rem 2rem 3rem;
+    justify-content: space-between
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding: 3rem 1rem 0 3rem;
+}
+
+.modal-content {
+    border: 0
+}
+
+.modal-body {
+    padding: 0 3rem;
+}
+
+.modal-dialog {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px 20px rgb(0 0 0 / 6%);
+    border-radius: 15px;
+}
+
+.modal-header .btn-close {
+    padding: .5rem .5rem;
+    margin: -58px 0 0 0;
+}
+
+.modal-dialog {
+    margin-top: 8% !important
+}
+
+.signup-modal .modal-dialog {
+    margin-top: 3% !important
+}
+
+
+
+
+
+
+
+.agent-deal-modal .modal-header {
+    padding: 5rem 3rem 0 3rem;
+}
+
+.agent-deal-modal .modal-body {
+    padding: 28px 0px;
+}
+
+.coin-tbl-img {
+    display: flex;
+    align-items: center
+}
+
+    .coin-tbl-img p {
+        padding-right: 30px;
+        font-size: 16px;
+        color: #00000
+    }
+
+    .coin-tbl-img img {
+        padding-right: 15px
+    }
+
+.recvd-status span {
+    font-size: 12px;
+    background: #EFFBF1;
+    border: 1px solid #5DD777;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.withdraw-status span {
+    font-size: 12px;
+    background: #FFF3F3;
+    border: 1px solid #F2C5DC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 4px 17px;
+}
+
+.site-logo {
+    padding-left: 30px
+}
+
+.pymt--status {
+    font-size: 10px
+}
+
+
+
+
+@media (min-width: 576px) {
+    .create-user-modal .modal-dialog {
+        max-width: 594px;
+        margin: 1.75rem auto;
+    }
+
+    .transfer-fund-modal .modal-dialog {
+        max-width: 594px;
+        margin: 1.75rem auto;
+    }
+
+    .agent-deal-modal .modal-dialog {
+        max-width: 944px;
+        margin: 1.75rem auto;
+    }
+}
+
+.browse-file label {
+    display: inline-block;
+    background-color: #fff;
+    color: #2D76F1;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 9px 58px;
+    margin-top: 1rem;
+}
+
+.browse-file {
+    text-align: center
+}
+
+.drag-upload-file {
+    border: 1px dashed #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 6rem 0;
+    background: #F7F9FC;
+}
+
+.uploaded-file {
+    position: relative
+}
+
+    .uploaded-file button {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        position: absolute;
+        right: -10px;
+        top: -14px;
+    }
+
+.img-uploaded img {
+    border: 1px solid #2D76F1;
+    border-radius: 7px;
+}
+
+.no-img-uploaded img {
+    border: 1px dashed#2D76F1;
+    border-radius: 7px;
+}
+
+.img-uploaded button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    position: absolute;
+    right: -10px;
+    top: -14px;
+}
+
+.img-uploaded {
+    position: relative;
+    max-width: 235px
+}
+
+.create-deals--page .user-form .form-group {
+    margin-top: 16px;
+    position: relative;
+}
+
+.filled-lite-btn {
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    background: #2D76F1;
+    border-radius: 7px;
+    padding: 12px 23px !important;
+}
+
+.transfer-funds-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    background: #2D76F1;
+    border-radius: 7px;
+    padding: 11px 10px !important;
+}
+
+.agent-dashboard .overview-deals-section {
+    margin-top: 0;
+}
+
+.agent-dashboard .current-week-stats {
+    height: unset !important;
+}
+
+.agent-dashboard .deals-card-stats {
+    max-width: 80px;
+    margin-left: auto
+}
+
+.agent-dashboard .dashboard-widget {
+    padding: 19px;
+}
+
+.agent-dashboard .current-week-stats {
+    margin-top: 0;
+}
+
+.ok--btn button {
+    margin-left: auto;
+    padding: 10px 37px;
+}
+
+/*Counterparties Wallet css start*/
+
+.counterparties-page {
+    display: flex;
+}
+
+#page-wrapper {
+    background: #E5E5E5;
+}
+
+.counterparties-left-header {
+    background: #2D76F1
+}
+
+.counterparties-left {
+    width: 545px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.counterparties-right {
+    flex: 1
+}
+
+.true-usd-icon {
+    background-image: url("../assets/images/cpoin-icon.png")
+}
+
+.counterparties-left {
+    padding: 0 25px 0px 25px;
+    margin-top: -20px;
+}
+
+.counterparties-left-header {
+    padding: 30px;
+    border-radius: 7px;
+    color: #fff;
+}
+
+.counterparties-left-body {
+    border: 1.5px solid #CADAFC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-top: 25px;
+}
+
+.current-balance-amnt {
+    font-size: 2.813rem;
+}
+
+.counterparties-left-tabs .nav-link {
+    letter-spacing: 0;
+    padding: 19px;
+}
+
+.counterparties-left-tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    background: #2873EA;
+}
+
+.w-draw-b-footer .no-filled-btn {
+    background: #fff;
+    color: #2D76F1;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 10px 60px;
+    width: 100%;
+}
+
+.w-draw-b-footer .filled-btn {
+    background: #2D76F1;
+    color: #fff;
+    border: 1px solid #2D76F1;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 10px 60px;
+    width: 100%;
+}
+
+.w-draw-b-footer {
+    margin-top: 24px
+}
+
+.counterparties-page {
+    box-shadow: 0px 2px 6px rgb(45 118 241 / 16%);
+    border-radius: 7px;
+}
+
+.user-form label {
+    display: block
+}
+
+.select-coin-btn {
+    background: #F8F8F8;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+    border-radius: 7px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+}
+
+    .select-coin-btn img {
+        padding-right: 15px
+    }
+
+.add-txt--dtls span {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    word-wrap: break-word;
+}
+
+
+.network--txt-dtls span {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.add-book-opt {
+    color: #777777
+}
+
+.netswork-slctd {
+    color: #777777
+}
+
+.w-amnt-lbls {
+    display: flex;
+    justify-content: space-between
+}
+
+    .w-amnt-lbls span {
+        font-size: 12px;
+        margin-left: 10px
+    }
+
+.w-amnt-opt {
+    position: absolute;
+    right: 15px;
+    top: 47px;
+}
+
+    .w-amnt-opt span {
+        color: #C4C4C4;
+    }
+
+        .w-amnt-opt span.active {
+            color: #2D76F1;
+        }
+
+.coin-selected {
+    padding-right: 10px;
+    border-right: 1px solid #C4C4C4
+}
+
+.max-selected {
+    padding-left: 10px
+}
+
+.remaining--dtls {
+    display: flex;
+    justify-content: flex-end
+}
+
+    .remaining--dtls span {
+        font-size: 12px;
+        padding-left: 12px
+    }
+
+.network-fee-info {
+    font-size: 12px;
+    color: #777777
+}
+
+.withdraw-bank-sec {
+    padding: 24px
+}
+
+.withdraw-bank-body {
+    padding: 24px
+}
+
+.rcvd-amnt-sec {
+    padding: 24px
+}
+
+    .rcvd-amnt-sec .no-filled-btn {
+        background: #fff;
+        color: #2D76F1;
+        border: 1px solid #2D76F1;
+        box-sizing: border-box;
+        border-radius: 7px;
+        padding: 10px 60px;
+        width: 100%;
+    }
+
+    .rcvd-amnt-sec .filled-btn {
+        background: #2D76F1;
+        color: #fff;
+        border: 1px solid #2D76F1;
+        box-sizing: border-box;
+        border-radius: 7px;
+        padding: 10px 60px;
+        width: 100%;
+    }
+
+.select-coin-modal .pymt--status {
+    margin: 0 11px;
+    display: block;
+}
+
+.select-coin-modal td {
+    font-size: 14px
+}
+
+.tbl--search {
+    position: relative;
+    margin-bottom: 24px
+}
+
+    .tbl--search .ubi-iconsearch {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        color: #2D76F1;
+    }
+
+    .tbl--search input {
+        text-indent: 25px;
+        padding: 11px 20px;
+        background: #F8F8F8;
+        border-radius: 7px
+    }
+
+.select-coin-modal .modal-content {
+    box-shadow: 0px 4px 25px 20px rgb(0 0 0 / 6%);
+    border-radius: 15px;
+}
+
+.select-coin-modal .modal-body {
+    padding-bottom: 3rem
+}
+
+.select-coin-modal .modal-dialog {
+    margin-top: 16% !important;
+}
+
+.select-coin-modal tr {
+    cursor: pointer
+}
+
+.addbook-tble .ubi-iconinfo {
+    color: #FFD764;
+    font-size: 16px
+}
+
+.addbook-tble .alert-primary {
+    padding: 13px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.addbook-tble td {
+    width: 50%;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.addbook-tble tr:nth-child(even) {
+    background: #F7FAFF;
+}
+
+.add-book-modal .modal-body {
+    padding-bottom: 1rem
+}
+
+.add-book-modal .add-new--add {
+    padding-top: 2rem
+}
+
+.add-book-modal .modal-content {
+    box-shadow: 0px 4px 25px 20px rgb(0 0 0 / 6%);
+    border-radius: 15px;
+}
+
+.add-book-modal .modal-dialog {
+    margin-top: 16% !important;
+}
+
+.agent-deal-modal .modal-content {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px 20px rgb(0 0 0 / 6%);
+    border-radius: 15px;
+}
+
+.error-modal h4 {
+    max-width: 750px;
+    margin: auto
+}
+
+.counterparties-right .title-left {
+    display: flex
+}
+
+.ff-user-rgstr .form-check {
+    flex: 1;
+}
+
+
+
+
+/*Counterparties Wallet css end*/
+
+
+@media (min-width: 1201px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+        margin-left: -19.75rem;
+    }
+
+    #sidebarToggle {
+        display: none
+    }
+
+    #page-content-wrapper {
+        margin-left: 19.75rem
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 993px) {
+    .counterparties-left {
+        width: 386px;
+    }
+
+    .counterparties-left-tabs .nav-item .nav-link {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .counterparties-left-tabs .nav-link {
+        padding: 12px;
+    }
+
+    .remaining--dtls {
+        margin-top: 5px
+    }
+
+    .counterparties-left-tabs .user-form button {
+        padding: 10px;
+    }
+
+    .filled-btn {
+        padding: 10px;
+    }
+
+    .rcvd-amnt-sec .no-filled-btn {
+        padding: 10px 15px;
+        width: 100%;
+    }
+
+    .rcvd-amnt-sec .filled-btn {
+        padding: 10px 15px;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
+    .singledeal-page-content .single-deal-left {
+        padding-right: 0;
+    }
+
+    .uploaded-file img {
+        padding: 10px 11px;
+        border-right: 1px solid #2D76F1;
+    }
+
+    .uploaded-file span {
+        padding-left: 0px;
+        font-size: 0.875rem
+    }
+
+    .prprty-inspection-timeline .approve-btn-timeline {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        border: none;
+        color: #fff;
+        background: #2D76F1;
+        border-radius: 7px;
+        margin-top: 3px;
+        padding: 10px 23px !important;
+    }
+}
+
+@media screen and (max-width: 1700px) and (min-width: 1201px) {
+    .deals-card-txt h5:nth-child(1) {
+        padding-right: 40px
+    }
+
+    .dashboard-widget {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .signupflow .card {
+        margin: 0;
+        padding: 4.188rem 1.438rem;
+    }
+
+    .singledeal-page-content .single-deal-left {
+        padding-right: 0;
+    }
+
+    .deals--page .page-header button {
+        padding: 15px 15px !important;
+    }
+
+    .agent-deal-modal .modal-dialog {
+        margin: 15px
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mobile--logo {
+        display: block;
+        margin-left: 22px;
+    }
+
+        .mobile--logo img {
+            width: 150px
+        }
+
+    .header-menu {
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        justify-content: end;
+    }
+
+    .main-header .container-fluid {
+        flex-wrap: nowrap
+    }
+
+    .sidebar-heading {
+        display: none
+    }
+
+    .site-logo {
+        display: none
+    }
+
+    #navbarSupportedContent .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+
+    #sidebar-wrapper {
+        margin-top: 60px;
+        z-index: 1
+    }
+
+    .header-menu .dropdown-toggle {
+        border: 0
+    }
+
+    .overview-users-card {
+        margin-top: 35px;
+        margin-bottom: 35px
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .deal-numbers {
+        font-size: 30px;
+    }
+
+    .dashboard-widget {
+        padding: 15px;
+    }
+
+    .ubi-iconnotify:after {
+        left: 28px;
+    }
+
+    .overviewdeals-stats-card {
+        margin-top: 15px
+    }
+
+    .counterparties-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .counterparties-left {
+        width: 100%
+    }
+
+    .counterparties-right {
+        margin-top: 30px
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .agent-dashboard .dashboard-widget {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .signupflow .card {
+        margin: 0;
+        padding: 15px
+    }
+
+    .signupflow .nav-tabs .nav-link {
+        color: #000000;
+        padding: 0.6rem 0.2rem;
+    }
+
+
+    #navbarSupportedContent .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .main-header {
+        padding: .5rem 0 .5rem 0 !important;
+        background: #2D76F1;
+    }
+
+
+    #navbarSupportedContent .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+        font-size: 12px;
+    }
+
+    .ubi-iconnotify:after {
+        left: 8px;
+        top: 5px;
+    }
+
+
+    .uploaded--img {
+        margin-bottom: 15px
+    }
+
+    .singledeal-page-content .single-deal-left {
+        padding-right: 0;
+    }
+
+    .agent-info-txt {
+        padding-left: 15px;
+    }
+
+    .prprty-inspection-timeline .approve-btn-timeline {
+        padding: 10px 22px !important;
+        margin-top: 15px
+    }
+
+    .deals--page .title-right {
+        display: grid;
+        justify-content: unset;
+    }
+
+    .nav-search {
+        width: 100%;
+    }
+
+    .nav-search, .filter-btn {
+        margin: 5px 0;
+    }
+
+    .stats-header {
+        display: grid;
+    }
+
+    .stats-duration-tabs {
+        margin-top: 15px
+    }
+
+    .overviewdeals-stats-card {
+        margin-top: 15px
+    }
+
+    .stats--status {
+        margin-top: 15px
+    }
+
+    .page-content {
+        margin: 15px;
+        background: #fff;
+        padding: 45px 15px;
+    }
+
+    .dashboard-widget {
+        padding: 15px;
+    }
+
+    .dataTables_length {
+        left: 2px;
+    }
+
+    .create-user-btns button {
+        width: 100%
+    }
+
+    .deals--page .page-header {
+        padding: 0;
+    }
+
+    .single-deal-left {
+        margin-top: 15px
+    }
+
+    .modal-body {
+        padding: 0 1rem;
+    }
+
+    .modal-footer {
+        padding: 2rem 1rem 2rem 1rem;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+        padding: 3rem 1rem 0 1rem;
+    }
+
+    .agent-deal-modal .modal-header {
+        padding: 5rem 1rem 0 3rem;
+    }
+
+    .create-deal-right {
+        margin-top: 25px
+    }
+
+        .create-deal-right .img-uploaded {
+            margin-top: 15px
+        }
+
+    .counterparties-left {
+        padding: 0;
+        margin-top: -20px;
+    }
+
+    .filled-btn {
+        margin-top: 5px
+    }
+
+    .current-balance-amnt {
+        font-size: 2rem;
+    }
+
+    .addbook-tble td {
+        display: grid;
+    }
+
+    .counterparties-left-tabs .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1200px) {
+    .deal-numbers {
+        font-size: 1.5rem;
+    }
+
+    .deals-card h5 {
+        font-size: 1.1rem;
+    }
+
+    .agent-dashboard .dashboard-widget {
+        padding: 10px;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .stat-bars .bars-txt label {
+        font-size: 1rem;
+    }
+
+    .current-week-stats {
+        margin-bottom: 0 !important;
+    }
+
+    .overviewdeals-stats-card p {
+        font-family: 'Open Sans', sans-serif;
+        color: #777777;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .deals-sub-icon {
+        color: #fff;
+        margin-right: 10px;
+    }
+
+    .deals-appr-icon {
+        font-size: 34px;
+        background: #43E064;
+        color: #fff;
+        border-radius: 7px;
+        padding: 8px 9px;
+        margin-right: 10px;
+        height: 100%;
+    }
+
+    .deals-sub-number {
+        font-size: 1.2rem;
+    }
+
+    .deals-sub-icon {
+        font-size: 34px;
+        padding: 8px 9px;
+        margin-right: 10px;
+        height: 100%;
+    }
+
+    .agent-dashboard .dashboard-widget {
+        margin-bottom: 15px;
+    }
+
+    .singledeal-page-content .single-deal-left {
+        padding-right: 0;
+    }
+
+    .page-content {
+        padding: 45px 15px;
+    }
+
+    .uploaded-file img {
+        padding: 10px 10px;
+        border-right: 1px solid #2D76F1;
+    }
+
+    .prprty-inspection-timeline .approve-btn-timeline {
+        padding: 10px 23px !important;
+        margin-top: 2px;
+    }
+}

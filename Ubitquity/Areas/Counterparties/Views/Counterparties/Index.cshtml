@@ -1,0 +1,600 @@
+﻿@{
+    Layout = "~/Views/Shared/Counterparties_Layout.cshtml";
+}
+
+<!-- Page content-->
+<div class="page-content deals--page counterparties-page">
+    <div class="counterparties-left">
+        <div class="counterparties-left-header">
+            <h4>Current Balance</h4>
+            <span class="current-balance-amnt f-bold">$2959086.00</span>
+            <p class="mt-2 mb-0">BTC    5678.000000</p>
+        </div>
+        <div class="counterparties-left-body">
+            <div class="counterparties-left-tabs">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Withdraw with Bank</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Withdraw in Crypto</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="withdraw-bank-sec">
+                            <h6 class="f-bold">Withdraw with Bank</h6>
+                            <form class="user-form">
+                                <div class="form-group">
+                                    <label for="inputpass">Your Bank</label>
+                                    <i class="ubi-icondown"></i>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected="">Bank of America</option>
+                                        <option value="1">KeyBank</option>
+                                        <option value="2">TD</option>
+                                        @*<option value="1">Bank of UK</option>
+                                        <option value="2">Bank of CANADA</option>*@
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputemail">Account no</label>
+                                    <input type="email" class="form-control" id="inputemail" placeholder="102938486473392">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputpass">Withdraw Amount</label>
+                                    <input type="password" class="form-control" id="inputpass" placeholder="$20,275,237">
+                                </div>
+                                <div class=" bt-0 w-draw-b-footer">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="button" class="no-filled-btn f-bold " data-bs-toggle="modal" data-bs-target="#error-modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="filled-btn f-bold " data-bs-toggle="modal" data-bs-target="#tranxation-successful">
+                                                Withdraw
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="withdraw-bank-crypto">
+                            <div class="withdraw-bank-body">
+                                <h6 class="f-bold">Withdraw in Crypto Currency</h6>
+                                <form class="user-form">
+                                    <div class="form-group">
+                                        <label>Select Coin</label>
+                                        <i class="ubi-icondown"></i>
+                                        <button type="button" class="select-coin-btn" data-bs-toggle="modal" data-bs-target="#select--coin-modal"><img src="~/assets/images/cpoin-icon.png">True USD </button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address Book</label>
+                                        <i class="ubi-icondown"></i>
+                                        <button type="button" class="select-coin-btn" data-bs-toggle="modal" data-bs-target="#add--book-modal">KBDCS </button>
+                                        <div class="add-txt--dtls">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <span class="add-book-lbl">Address: </span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <span class="add-book-opt f-bold">OxsD12F32xvW3deG597997t7f7898h8g8y90h9h9yh</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="network--txt-dtls">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <span class="add-book-lbl">Network: </span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <span class="f-bold netswork-slctd">TUSD </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="w-amnt-lbls">
+                                            <label for="inputpas-s">Withdraw Amount</label>
+                                            <div><span>20,275,237</span><span class="lbl-txt">Available</span></div>
+                                        </div>
+                                        <input type="password" class="form-control" id="inputpas-s" placeholder="$20,275,237">
+                                        <div class="w-amnt-opt">
+                                            <span class="active coin-selected">
+                                                TUSD
+                                            </span>
+                                            <span class="max-selected">
+                                                Max
+                                            </span>
+                                        </div>
+                                        <div class="remaining--dtls">
+                                            <span class="pl-2">100 / 100BTC</span><span class="lbl-txt">24h remaining </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr class="m-0" style="border: 1px solid #C0D6FB;">
+                            <div class="rcvd-amnt-sec">
+                                <div class="row ">
+                                    <div class="col-md-6">
+                                        <p>Receive amount</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="f-bold b-txt">$2959086</h4>
+                                        <span class="network-fee-info">0.0005 BNB Network fee included</span>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-md-6">
+                                        <button type="button" class="no-filled-btn f-bold ">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="filled-btn f-bold ">
+                                            Withdraw
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="counterparties-right">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-xxl-3 title-left">
+                    <h1 class="page-title f-bold"><i class="ubi-iconwallet title-icon"></i>Counterparties Wallet </h1>
+                </div>
+                <div class="col-xxl-9 title-right">
+                    <div class="nav-search"> <i class="ubi-iconsearch"></i> <input type="text" class="form-control" placeholder="Search here..."> <button class="btn btn-primary">Search</button> </div>
+                    <div class="filter-btn">
+                        <button><i class="ubi-iconvector"></i>Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deal-page-content">
+            <div class="deals-table-sec">
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Stablecoins Type</th>
+                                <th>Deal ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">1</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">1</p>*@
+                                            <img src="~/assets/images/coin-table-1.png">
+                                            TUSD
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">2</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">2</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">3</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">3</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">4</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">4</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">5</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">5</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">6</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">6</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">7</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">5</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">8</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">6</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">9</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">7</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">10</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">8</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">11</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">9</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">12</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">10</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">13</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">11</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">14</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">12</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">15</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">13</p>*@
+                                            <img src="~/assets/images/coin-table-2.png">
+                                            USD Coin
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="recvd-status">
+                                        <span>Received</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            <p class="m-0">16</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="coin-tbl-img">
+                                            @*<p class="m-0">14</p>*@
+                                            <img src="~/assets/images/coin-table-3.png">
+                                            HDFC Bank
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#0000890</td>
+                                <td>USDT6980 </td>
+                                <td>
+                                    <div class="withdraw-status">
+                                        <span>Withdraw</span>
+                                    </div>
+                                </td>
+                                <td>2011/01/25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

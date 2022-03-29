@@ -1,0 +1,196 @@
+﻿@{
+    @*ViewData["Name"] = "";*@
+    Layout = "~/Views/Shared/Agent_Layout.cshtml";
+}
+
+
+<!-- Page content-->
+<div class="page-content create-deals--page">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title f-bold">Create New Deal</h1>
+            </div>
+        </div>
+    </div>
+    <div class="singledeal-page-content">
+        <div class="row">
+            <div class="col-xl-6 create-deal-left">
+                <div class="upload-section">
+                    <h5 class="f-bold">Attach Documents</h5>
+                    <div class="drag-upload-file">
+                        <div class="browse-file">
+                            <img src="~/assets/images/uploadfile.png" class="mb-2">
+                            <p>Upload Documents</p>
+                            <p class="g-text">-OR-</p>
+                            <div class="form-group">
+                                <input type="file" id="upload" hidden />
+                                <label for="upload">Browse File</label>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-4">
+                            <div class="uploaded-file">
+                                <img src="~/assets/images/up-file.svg">
+                                <span class="uploaded--file">Property Authentication.pdf</span>
+                                <button><img src="~/assets/images/close-up-file.svg" class="border-0 p-0"></button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="uploaded-file">
+                                <img src="~/assets/images/up-file.svg">
+                                <span class="uploaded--file">Property Authentication.pdf</span>
+                                <button><img src="~/assets/images/close-up-file.svg" class="border-0 p-0"></button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4 ">
+                            <div class="uploaded-file">
+                                <img src="~/assets/images/up-file.svg">
+                                <span class="uploaded--file">Property Authentication.pdf</span>
+                                <button><img src="~/assets/images/close-up-file.svg" class="border-0 p-0"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-6 create-deal-right  ">
+                <h5 class="f-bold">Property Details</h5>
+                <form class="user-form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">Address</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Address">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">City</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter City Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">State</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter state">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">Country</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Country Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">Zip Code</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Zip Code">
+                        </div>
+                    </div>
+                    <div class="form-group mt-0">
+                        <label for="inputemail">Property Pictures</label>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="no-img-uploaded">
+                                    <img src="~/assets/images/no-img.png" class="img-fluid">
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="img-uploaded">
+                                    <img src="~/assets/images/propertyimgs.png" class="img-fluid">
+                                    <button><img src="~/assets/images/close-up-file.svg" class="border-0 p-0"></button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="img-uploaded">
+                                    <img src="~/assets/images/propertyimgs.png" class="img-fluid">
+                                    <button><img src="~/assets/images/close-up-file.svg" class="border-0 p-0"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="f-bold mt-4">Counterparties Details</h5>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">Name</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputadd">Email</label>
+                            <input type="email" class="form-control" id="" placeholder="Enter Your Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <button type="button" class="filled-lite-btn singup-btn mt-0 reg-txt" data-bs-toggle="modal" data-bs-target="#create-user">
+                                Submit Now
+                            </button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="agent-deal-modal">
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade " id="create-user" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title f-bold" id="ModalLabel"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/assets/images/successful.png">
+                    <h4 class="f-bold mb-0 pt-5 pb-5">Congratulations</h4>
+                    <h4>
+                        Your deal has been created successfully.
+
+                    </h4>
+                </div>
+                <div class="modal-footer ok--btn bt-0">
+                    <button type="button" class="filled-btn f-bold singup-btn">
+                        OK
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="agent-deal-modal error-modal">
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade " id="error-modal" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title f-bold" id="ModalLabel1"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/assets/images/error-vector.png">
+                    <h4 class="f-bold mb-0 pt-5 pb-5">submission errors</h4>
+                    <h4>Your address does not match with your Zip code</h4>
+                </div>
+                <div class="modal-footer ok--btn bt-0">
+                    <button type="button" class="filled-btn f-bold singup-btn">
+                        OK
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

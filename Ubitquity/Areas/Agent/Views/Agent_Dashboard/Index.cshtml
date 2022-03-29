@@ -1,0 +1,141 @@
+﻿@{
+    @*ViewData["Name"] = "";*@
+    Layout = "~/Views/Shared/Agent_Layout.cshtml";
+}
+
+<!-- Page content-->
+<div class="page-content agent-dashboard">
+    <div class="page-header">
+        <h1 class="page-title f-bold"><i class="ubi-icondashboard title-icon"></i>Dashboard</h1>
+    </div>
+    <div class="dashboard-content">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="overview-deals-section dashboard-widget ">
+                    <h4 class="f-bold">Overview Deals</h4>
+                    <div class="overview-deals-inner">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="overviewdeals-stats-card d-flex">
+                                    <i class="ubi-iconbuilding-1 deals-sub-icon"></i>
+                                    <div>
+                                        <p>No of Deals Submitted</p>
+                                        <span class="deals-sub-number f-bold">3,336</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="overviewdeals-stats-card d-flex">
+                                    <i class="ubi-iconbuilding-1 deals-appr-icon"></i>
+                                    <div>
+                                        <p>No of Deals Submitted</p>
+                                        <span class="deals-sub-number f-bold">3,336</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-end">
+                                <div class="stats--status">
+                                    <i class="ubi-iconstats-up"></i>
+                                    <span class="stats--status-per">11%</span>
+                                    <span class="stats--status-duration">Last Year</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="overview-deals-graph">
+                                    <img src="~/assets/images/overview-graph.JPG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 ">
+                <div class=" deals-card dashboard-widget m-bottom">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="deals-card-txt ">
+                                <h5 class="f-bold">Total Deals</h5>
+                                <span class="deal-numbers f-bold">2934</span>
+                            </div>
+                        </div>
+                        <div class="col-5 text-end">
+                            <div class="deals-card-stats">
+                                <img src="~/assets/images/total-deals.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" deals-card dashboard-widget m-bottom">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="deals-card-txt ">
+                                <h5 class="f-bold">Deals Completed</h5>
+                                <span class="deal-numbers f-bold">1546</span>
+                            </div>
+                        </div>
+                        <div class="col-5 text-end">
+                            <div class="deals-card-stats">
+                                <img src="~/assets/images/deals-comp.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" deals-card dashboard-widget m-bottom">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="deals-card-txt ">
+                                <h5 class="f-bold">Deals Rejected</h5>
+                                <span class="deal-numbers f-bold">940</span>
+                            </div>
+                        </div>
+                        <div class="col-5 text-end">
+                            <div class="deals-card-stats">
+                                <img src="~/assets/images/deals-rej.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card current-week-stats dashboard-widget">
+                    <h4 class="f-bold">Current Week Status</h4>
+                    <div class="stat-bars">
+                        <div class="d-submited-bar bar--sec">
+                            <div class="bars-txt">
+                                <label class="f-bold">Deals Submitted</label><span class="s-txt">1750</span>
+                            </div>
+                            <div class="progress ">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-completed-bar bar--sec">
+                            <div class="bars-txt">
+                                <label class="f-bold">Deals Completed</label><span class="s-txt">1750</span>
+                            </div>
+                            <div class="progress ">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-progress-bar bar--sec">
+                            <div class="bars-txt">
+                                <label class="f-bold">Deals In Process</label><span class="s-txt">1750</span>
+                            </div>
+                            <div class="progress ">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-rejectd-bar bar--sec">
+                            <div class="bars-txt">
+                                <label class="f-bold">Deals Rejected</label><span class="s-txt">1750</span>
+                            </div>
+                            <div class="progress ">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

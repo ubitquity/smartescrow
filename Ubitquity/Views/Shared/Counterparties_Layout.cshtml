@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ubitquity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/assets/icons/css/ubitquity.css" rel="stylesheet">
+    <link href="~/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white">
+            <!--
+              <div class="sidebar-heading "><img src="~/assets/images/logo-white.png"></div>
+              <div class="list-group list-group-flush">
+                  <ul>
+                      <li><a class="list-group-item list-group-item-action list-group-item-light" href="./dashboard.html"><i class="ubi-icondashboard menu-icon"></i>Dashboard</a></li>
+                      <li><a class="list-group-item list-group-item-action list-group-item-light " href="./deals.html"><i class="ubi-icondeals menu-icon"></i>Deals</a></li>
+                      <li>                    <a class="list-group-item list-group-item-action list-group-item-light " href="./wallet.html"><i class="ubi-iconwallet menu-icon"></i>Wallet</a></li>
+                      <li>                    <a class="list-group-item list-group-item-action list-group-item-light " href="./all-users.html"><i class="ubi-iconall-users menu-icon"></i>All Users</a></li>
+                  </ul>
+              </div>
+              </div>
+              -->
+            <!-- Page content wrapper-->
+            <div id="page-wrapper">
+                <!-- Top navigation-->
+                <partial data-name="Navbar" name="~/Views/Shared/PartialViews/Counterparties_Navbar.cshtml" />
+
+                <!-- Page content-->
+                @RenderBody()
+            </div>
+        </div>
+        <div class="select-coin-modal">
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="select--coin-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="f-bold mb-4">Select Stablecoin to Withdraw</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="select-coin-tble">
+                                <label class="mb-2">Search coin</label>
+                                <div class="tbl--search">
+                                    <i class="ubi-iconsearch"></i>
+                                    <input type="text" class="form-control" placeholder="Search here..." onkeyup="myFunction()" id="myInput">
+                                </div>
+                                <table class="table table-borderless" id="myTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="coin-tbl-img">
+                                                    <img src="~/assets/images/coin-table-2.png">
+                                                    USD Coin
+                                                </div>
+                                            </td>
+                                            <td class=" text-end">
+                                                <div class="availablecoins-tble">2.0435 BTC</div>
+                                                <span class="b-txt pymt--status">+ $25.00 USD</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="coin-tbl-img">
+                                                    <img src="~/assets/images/coin-table-2.png">
+                                                    USDC
+                                                </div>
+                                            </td>
+                                            <td class=" text-end">
+                                                <div class="availablecoins-tble">2.0435 BTC</div>
+                                                <span class="b-txt pymt--status">+ $25.00 USD</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="coin-tbl-img">
+                                                    <img src="~/assets/images/coin-table-4.png">
+                                                    TUSD
+                                                </div>
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="availablecoins-tble">2.0435 BTC</div>
+                                                <span class="b-txt pymt--status">+ $25.00 USD</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="coin-tbl-img">
+                                                    <img src="~/assets/images/coin-table-3.png">
+                                                    PAX
+                                                </div>
+                                            </td>
+                                            <td class=" text-end">
+                                                <div class="availablecoins-tble">2.0435 BTC</div>
+                                                <span class="b-txt pymt--status">+ $25.00 USD</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-book-modal">
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="add--book-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="f-bold mb-4">Select from Address Book</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="addbook-tble">
+                                <div class="alert alert-primary" role="alert">
+                                    <i class="ubi-iconinfo"></i>
+                                    Whitelist enabled.USDC withdrawals can only be made to whitelisted addresses
+                                </div>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="lbl-txt-addbook">
+                                                    USDC Wallet
+                                                </div>
+                                                <div class="lbl-txt-addbook">
+                                                    Address:<span class="px-4 lbl-txt">OxsD12F32xvW3deG5</span>
+                                                </div>
+                                            </td>
+                                            <td class="align-bottom">
+                                                <div class="lbl-txt-addbook">
+                                                    Network:<span class="px-3 lbl-txt">USDC</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="lbl-txt-addbook">
+                                                    USDC Wallet
+                                                </div>
+                                                <div class="lbl-txt-addbook">
+                                                    Address:<span class="px-4 lbl-txt">OxsD12F32xvW3deG5</span>
+                                                </div>
+                                            </td>
+                                            <td class="align-bottom">
+                                                <div class="lbl-txt-addbook">
+                                                    Network:<span class="px-3 lbl-txt">USDC</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="lbl-txt-addbook">
+                                                    USDC Wallet
+                                                </div>
+                                                <div class="lbl-txt-addbook">
+                                                    Address:<span class="px-4 lbl-txt">OxsD12F32xvW3deG5</span>
+                                                </div>
+                                            </td>
+                                            <td class="align-bottom">
+                                                <div class="lbl-txt-addbook">
+                                                    Network:<span class="px-3 lbl-txt">USDC</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="add-new--add text-center"><a href="#">+Add New Address</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agent-deal-modal">
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="tranxation-successful" tabindex="-1" aria-labelledby="ModalLabel" aria-modal="true" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title f-bold" id="ModalLabel"></h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="~/assets/images/successful.png">
+                            <h4 class="f-bold mb-0 pt-5 pb-5">Successful</h4>
+                            <h4>
+                                Your transaction has been completed successfully!
+
+
+                            </h4>
+                        </div>
+                        @*<div class="modal-footer ok--btn bt-0">
+                            <button type="button" class="filled-btn f-bold singup-btn">
+                                OK
+                            </button>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agent-deal-modal error-modal">
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade " id="error-modal" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title f-bold" id="ModalLabel1"></h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="~/assets/images/error-vector.png">
+                            <h4 class="f-bold mb-0 pt-5 pb-5">Not Successful</h4>
+                            <h4>
+                                Sorry! something went wrong. We couldn’t process your submission.
+                                Please try again later.
+                            </h4>
+                        </div>
+                        @*<div class="modal-footer ok--btn bt-0">
+                            <button type="button" class="filled-btn f-bold singup-btn">
+                                OK
+                            </button>
+
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/customjs.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', event => {
+
+            // Toggle the side navigation
+            const sidebarToggle = document.body.querySelector('#sidebarToggle');
+            if (sidebarToggle) {
+                // Uncomment Below to persist sidebar toggle between refreshes
+                // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+                //     document.body.classList.toggle('sb-sidenav-toggled');
+                // }
+                sidebarToggle.addEventListener('click', event => {
+                    event.preventDefault();
+                    document.body.classList.toggle('sb-sidenav-toggled');
+                    localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+                });
+            }
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+    </script>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        //Check User Session
+        if (localStorage.getItem('Ubitquity_Login_UserID') > 0) {
+            hide_login_label();
+        } else {
+            window.location.href="@Url.Action("SignIn", "Account")";
+        }
+
+    </script>
+</body>
+</html>
