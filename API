@@ -1,0 +1,72 @@
+SmartEscrow Integration API Specification (Stablecoin)IntroductionThis document outlines the RESTful API for integrating external systems with the SmartEscrow platform using cryptocurrency stablecoins. The API is designed to be secure and predictable, enabling programmatic management of crypto-native escrow agreements from creation through to fund disbursement on the blockchain.This specification includes support for USDC, Tether (USDT), and UBITQUITY USD (uUSD).All API requests must be made over HTTPS. All request and response bodies are formatted in JSON.Authentication & Best PracticesAuthentication is handled via API keys. Your unique API key must be included in the Authorization header.Header: Authorization: Bearer <YOUR_API_KEY>Idempotency: To prevent accidental duplicate operations, it is highly recommended to include an Idempotency-Key header with a unique UUID for all POST requests. The server will save the result of the first request made with a given key.Header: Idempotency-Key: <UNIQUE_UUID_V4>Core Data ModelsEscrow ObjectRepresents a single escrow agreement on the blockchain.{
+  "id": "esc_1a2b3c4d5e6f",
+  "status": "pending_funding", // pending_funding, funded, release_approved, released, disputed, cancelled
+  "description": "Escrow for purchase of property NFT 0xabc123...",
+  "parties": {
+    "buyer": { 
+      "id": "party_buyer_xyz", 
+      "name": "Alice",
+      "wallet_address": "0x1234...abcd" 
+    },
+    "seller": { 
+      "id": "party_seller_abc", 
+      "name": "Bob",
+      "wallet_address": "0x5678...efgh"
+    },
+    "arbiter": { 
+      "id": "party_arbiter_ijk", 
+      "name": "Arbiter Corp",
+      "wallet_address": "0x9012...ijkl"
+    }
+  },
+  "asset": {
+    "type": "real_estate_nft",
+    "identifier": "0xabc123def456",
+    "description": "NFTitle for 123 Main St, Anytown"
+  },
+  "amount": "500000.00",
+  "stablecoin": "USDC", // Supported: USDC, USDT, uUSD
+  "blockchain": "ethereum", // e.g., ethereum, polygon, solana
+  "release_conditions": [
+    "Successful property inspection.",
+    "Signature of all closing documents."
+  ],
+  "created_at": "2025-09-15T10:00:00Z",
+  "expires_at": "2025-10-15T10:00:00Z"
+}
+Transaction ObjectRepresents a verified on-chain event.{
+  "id": "txn_fedcba9876",
+  "escrow_id": "esc_1a2b3c4d5e6f",
+  "type": "funding", // funding, release, refund
+  "amount": "500000.00",
+  "stablecoin": "USDT", // Supported: USDC, USDT, uUSD
+  "status": "completed", // pending, completed, failed
+  "blockchain": "ethereum",
+  "transaction_hash": "0x...txhash...",
+  "created_at": "2025-09-16T14:30:00Z"
+}
+API Endpoints1. Escrow ManagementPOST /v1/escrowsCreates a new escrow agreement.Request Body:description (string, required)parties (object, required): Contains buyer, seller, and optional arbiter objects, each requiring a wallet_address.asset (object, required): The asset in escrow.amount (string, required): The amount of stablecoin to be held.stablecoin (string, required): The stablecoin ticker. Must be one of USDC, USDT, or uUSD.blockchain (string, required): The blockchain network (e.g., ethereum).release_conditions (array of strings, optional)webhook_url (string, optional): URL for status updates.Response: 201 CreatedReturns the full Escrow object, including the designated escrow wallet address where the buyer should send funds.GET /v1/escrows/{escrowId}Retrieves the details of a specific escrow agreement.Response: 200 OKReturns the full Escrow object.2. Fund ManagementPOST /v1/escrows/{escrowId}/fundNotifies the platform that the buyer has sent funds to the escrow address. The SmartEscrow platform will then verify this transaction on-chain.Parameters:escrowId (string, required): The escrow to fund.Request Body:transaction_hash (string, required): The blockchain transaction hash (TxID) of the funding transfer.Response: 202 AcceptedThe transaction verification is initiated. The final status (funded) will be confirmed via webhook after the transaction has sufficient on-chain confirmations.{
+  "status": "verification_pending",
+  "message": "Transaction submitted for on-chain verification. Final status will be delivered via webhook."
+}
+POST /v1/escrows/{escrowId}/releaseAuthorizes the release of funds from escrow to the seller's wallet address (as defined in the Escrow object).Parameters:escrowId (string, required): The escrow to release funds from.Request Body:release_notes (string, optional): Notes regarding the release.Response: 202 AcceptedThe on-chain release process is initiated. The SmartEscrow platform will execute and pay the gas fees for this transaction. The final status will be sent via webhook.{
+  "status": "release_initiated",
+  "message": "On-chain fund release has been started. Final status will be delivered via webhook."
+}
+3. Status and CancellationPOST /v1/escrows/{escrowId}/cancelCancels an escrow agreement. Funds are returned to the buyer's wallet. Can only be used before funds are released.Parameters:escrowId (string, required): The escrow to cancel.Request Body:reason (string, required): The reason for cancellation.cancelled_by_party_id (string, required): The ID of the party initiating the cancellation.Response: 200 OKReturns the updated Escrow object with a cancelled status. The refund transaction will be processed on-chain and confirmed via webhook.WebhooksThe platform will send real-time updates on on-chain events to your registered webhook_url.Example Webhook Payload (escrow.funded):{
+  "event_id": "evt_zxyw987",
+  "event_type": "escrow.funded",
+  "created_at": "2025-09-16T14:45:10Z",
+  "data": {
+    "object": {
+      // The full Transaction object for the funding event
+      "id": "txn_fedcba9876",
+      "escrow_id": "esc_1a2b3c4d5e6f",
+      "type": "funding",
+      "status": "completed",
+      "transaction_hash": "0x...txhash...",
+      // ... other transaction fields
+    }
+  }
+}
+Your endpoint must respond with a 200 OK to acknowledge receipt.
