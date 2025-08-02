@@ -1,0 +1,46 @@
+SmartEscrow API DocumentationWelcome to the SmartEscrow API! This documentation will help you understand how to programmatically create, manage, and automate secure stablecoin escrows on the blockchain.This guide is designed for developers and covers everything from initial setup to detailed endpoint references.1. Getting StartedBefore you can make your first API call, you need to get your credentials.AuthenticationThe SmartEscrow API uses API Keys to authenticate requests. You can get your keys from the SmartEscrow Developer Dashboard (you will be provided a link upon partnership).All API requests must be made over HTTPS and must include your API key in an Authorization header as a Bearer token.Header Format:Authorization: Bearer <YOUR_API_KEY>Requests without a valid key will result in a 401 Unauthorized error.2. Core ConceptsUnderstanding these concepts is crucial for a successful integration.The Escrow LifecycleOur API manages a clear, four-step process for every escrow:Creation: An escrow agreement is created, defining all parties, the amount, and the asset. The system generates a unique escrow wallet for this specific transaction.Funding: The buyer sends the agreed-upon stablecoin amount to the unique escrow wallet.Verification: You notify our API of the funding transaction hash. Our system monitors the blockchain and, after sufficient confirmations, marks the escrow as funded.Release: Once conditions are met, an authorized party triggers the release. Our system executes the on-chain transaction to send the funds from the escrow wallet to the seller.Key Data ModelsEscrow Object: This is the master record for the agreement. It holds the status, the parties (buyer, seller, arbiter) and their wallet addresses, the amount, and the chosen stablecoin and blockchain.Transaction Object: This object represents a verified on-chain event, such as a funding or release. It contains the transaction_hash, amount, and status of that specific event.Developer Best PracticesIdempotency: To prevent accidental duplicate actions (like creating two identical escrows), we strongly recommend using an Idempotency-Key header for all POST requests. If you send the same request twice with the same key, the server will only process it once and return the original result.Webhooks: Instead of repeatedly polling our API for status updates, use webhooks. Provide a webhook_url when creating an escrow, and our system will send you real-time notifications for important events like escrow.funded and escrow.released. This is more efficient and reliable.3. Tutorial: Creating Your First EscrowThis walkthrough will guide you through a complete escrow flow.Step 1: Create the EscrowFirst, make a POST request to the /v1/escrows endpoint to define the agreement.Request:POST /v1/escrows
+Host: api.smartescrow.com
+Authorization: Bearer <YOUR_API_KEY>
+Idempotency-Key: a1b2c3d4-e5f6-7890-1234-567890abcdef
+Content-Type: application/json
+
+{
+  "description": "Escrow for NFTitle 0xabc...",
+  "parties": {
+    "buyer": { "wallet_address": "0xBUYER..." },
+    "seller": { "wallet_address": "0xSELLER..." }
+  },
+  "amount": "10000.00",
+  "stablecoin": "uUSD",
+  "blockchain": "ethereum",
+  "webhook_url": "https://yourapp.com/webhooks/smartescrow"
+}
+
+Response (201 Created):The API will return the full Escrow object. Most importantly, it will contain the unique escrow_wallet_address where the buyer needs to send the funds.Step 2: Fund the Escrow (Off-API Action)Instruct your buyer to send exactly 10000.00 uUSD to the escrow_wallet_address provided in the Step 1 response. Once they do, they will receive a transaction hash (TxID) from their wallet provider.Step 3: Confirm FundingOnce you have the transaction_hash from the buyer, submit it to the /fund endpoint.Request:POST /v1/escrows/{escrowId}/fund
+Host: api.smartescrow.com
+Authorization: Bearer <YOUR_API_KEY>
+
+{
+  "transaction_hash": "0x...funding_tx_hash..."
+}
+
+Response (202 Accepted):The API acknowledges the request and begins monitoring the blockchain.Step 4: Wait for the 'Funded' WebhookOur system will wait for sufficient on-chain confirmations. Once verified, we will send an escrow.funded event to your webhook_url. At this point, the escrow status is officially funded.Step 5: Release the FundsWhen the conditions of the sale are met, an authorized party (e.g., the buyer) can trigger the release.Request:POST /v1/escrows/{escrowId}/release
+Host: api.smartescrow.com
+Authorization: Bearer <YOUR_API_KEY>
+
+{
+  "release_notes": "Property inspection passed."
+}
+
+Response (202 Accepted):The API acknowledges the request and initiates the on-chain transfer to the seller's wallet.Step 6: Wait for the 'Released' WebhookOnce the release transaction is confirmed on the blockchain, we will send an escrow.released event to your webhook URL. The escrow is now completed.4. API ReferenceEscrow EndpointsPOST /v1/escrowsCreate a new escrow agreement.Body Parameters:description (string, required): Purpose of the escrow.parties (object, required): Must contain buyer and seller objects, each with a wallet_address. An arbiter is optional.amount (string, required): The amount of stablecoin to hold.stablecoin (string, required): One of USDC, USDT, uUSD.blockchain (string, required): The target network (e.g., ethereum).webhook_url (string, optional): Your endpoint for receiving event notifications.GET /v1/escrows/{escrowId}Retrieve the details of a specific escrow.Path Parameters:escrowId (string, required): The unique ID of the escrow.POST /v1/escrows/{escrowId}/fundSubmit a transaction hash to prove funding.Path Parameters:escrowId (string, required): The unique ID of the escrow.Body Parameters:transaction_hash (string, required): The on-chain transaction hash from the buyer's funding transfer.POST /v1/escrows/{escrowId}/releaseAuthorize the release of funds to the seller.Path Parameters:escrowId (string, required): The unique ID of the escrow.Body Parameters:release_notes (string, optional): Any relevant notes about the release.POST /v1/escrows/{escrowId}/cancelCancel an escrow before it is released.Path Parameters:escrowId (string, required): The unique ID of the escrow.Body Parameters:reason (string, required): Reason for the cancellation.cancelled_by_party_id (string, required): The ID of the party initiating the cancellation.5. Error HandlingOur API uses standard HTTP status codes to indicate the success or failure of a request.CodeMeaningDescription200OKThe request was successful.201CreatedThe resource was successfully created.202AcceptedThe request was accepted for processing, but is not yet complete.400Bad RequestYour request is malformed. Check for missing parameters or invalid JSON.401UnauthorizedYour API key is missing or invalid.403ForbiddenYou do not have permission to perform this action.404Not FoundThe requested resource does not exist.500Internal Server ErrorWe had a problem with our server. Please try again later.6. WebhooksWebhooks are the recommended way to get notified about events happening with your escrows.Event StructureAll webhook events are sent as a POST request to your specified webhook_url with the following JSON structure:{
+  "event_id": "evt_zxyw987...",
+  "event_type": "escrow.funded",
+  "created_at": "2025-09-16T14:45:10Z",
+  "data": {
+    "object": {
+      // The full Escrow or Transaction object
+    }
+  }
+}
+
+Key Event Typesescrow.createdescrow.fundedescrow.release_approvedescrow.releasedescrow.cancelledescrow.disputedResponding to WebhooksYour endpoint must respond with a 200 OK status code to acknowledge that you have received the webhook. If we do not receive a 200 OK, we will consider the delivery a failure and retry with an exponential backoff schedule.
